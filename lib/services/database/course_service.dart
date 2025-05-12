@@ -34,4 +34,13 @@ class CourseService {
       return Stream.empty();
     }
   }
+
+  //delete a course
+  Future<void> deleteCourse(String id) async {
+    try {
+      await courseCollection.doc(id).delete();
+    } catch (error) {
+      print(error);
+    }
+  }
 }
