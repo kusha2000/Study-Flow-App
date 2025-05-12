@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:study_flow/models/assignment_model.dart';
+import 'package:study_flow/models/course_model.dart';
+import 'package:study_flow/models/note_model.dart';
 import 'package:study_flow/pages/add_assignment_page.dart';
 import 'package:study_flow/pages/add_course_page.dart';
 import 'package:study_flow/pages/create_note_page.dart';
 import 'package:study_flow/pages/home_page.dart';
 import 'package:study_flow/pages/notifications_screen.dart';
-
+import 'package:study_flow/pages/single_assignment_screen.dart';
+import 'package:study_flow/pages/single_course_screen.dart';
+import 'package:study_flow/pages/single_note_screen.dart';
 
 class RouterClass {
   final router = GoRouter(
