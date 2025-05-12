@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:study_flow/models/course_model.dart';
+import 'package:study_flow/services/database/course_service.dart';
 import 'package:study_flow/widgets/sample_button.dart';
 import 'package:study_flow/widgets/sample_input.dart';
 
@@ -37,7 +40,17 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
 
       try {
         // Create a new course
-        await Future.delayed(const Duration(seconds: 1));
+
+        final Course course = Course(
+          id: '',
+          name: _courseNameController.text,
+          description: _courseDescriptionController.text,
+          duration: _courseDurationController.text,
+          schedule: _courseScheduleController.text,
+          instructor: _courseInstructorController.text,
+        );
+
+        await CourseService().createCourse(course);
 
         // Show success feedback
         ScaffoldMessenger.of(context).showSnackBar(
@@ -57,8 +70,11 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
           ),
         );
 
-        // Navigate back or clear form
-        Navigator.of(context).pop();
+        // Delay navigation to ensure SnackBar is displayed
+        await Future.delayed(const Duration(seconds: 2));
+
+        // Navigate to the home page
+        GoRouter.of(context).go('/');
       } catch (error) {
         print(error);
         ScaffoldMessenger.of(context).showSnackBar(
