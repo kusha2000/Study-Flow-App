@@ -43,4 +43,17 @@ class CourseService {
       print(error);
     }
   }
+
+  //get cousers as list
+  Future<List<Course>> getCourses() async {
+    try {
+      final QuerySnapshot snapshot = await courseCollection.get();
+      return snapshot.docs.map((doc) {
+        return Course.fromJson(doc.data() as Map<String, dynamic>);
+      }).toList();
+    } catch (error) {
+      print('Error fetching courses: $error');
+      return [];
+    }
+  }
 }

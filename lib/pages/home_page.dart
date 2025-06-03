@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage>
   int _selectedIndex = 0;
   late final AnimationController _controller;
 
-  static const List<Widget> _widgetOptions = <Widget>[
+  static List<Widget> _widgetOptions = <Widget>[
     MainPage(),
     CoursePage(),
     AssignmentPage(),
