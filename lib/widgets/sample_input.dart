@@ -6,15 +6,16 @@ class CourseInputField extends StatefulWidget {
   final String? Function(String?)? validator;
   final IconData? prefixIcon;
   final bool obscureText;
+  final int? maxLines;
 
-  const CourseInputField({
-    super.key,
-    required this.controller,
-    required this.labelText,
-    this.validator,
-    this.prefixIcon,
-    this.obscureText = false,
-  });
+  const CourseInputField(
+      {super.key,
+      required this.controller,
+      required this.labelText,
+      this.validator,
+      this.prefixIcon,
+      this.obscureText = false,
+      this.maxLines});
 
   @override
   State<CourseInputField> createState() => _CourseInputFieldState();
@@ -102,6 +103,7 @@ class _CourseInputFieldState extends State<CourseInputField>
                 controller: widget.controller,
                 focusNode: _focusNode,
                 obscureText: widget.obscureText,
+                maxLines: widget.maxLines ?? 1,
                 decoration: InputDecoration(
                   labelText: widget.labelText,
                   labelStyle: TextStyle(

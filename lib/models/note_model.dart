@@ -1,13 +1,10 @@
-import 'dart:io';
-
 class Note {
   final String id;
   final String title;
   final String description;
   final String section;
   final String references;
-  final File? imageData;
-  final String? imageUrl;
+
 
   Note({
     required this.id,
@@ -15,8 +12,6 @@ class Note {
     required this.description,
     required this.section,
     required this.references,
-    this.imageData,
-    this.imageUrl,
   });
 
   // Convert a Note instance into a Map
@@ -26,8 +21,6 @@ class Note {
       'description': description,
       'section': section,
       'references': references,
-      'imageData': imageData,
-      'imageUrl': imageUrl,
     };
   }
 
@@ -39,8 +32,6 @@ class Note {
       description: json['description'] ?? '',
       section: json['section'] ?? '',
       references: json['references'] ?? '',
-      imageData: json['imageData'],
-      imageUrl: json['imageUrl'],
     );
   }
 }
