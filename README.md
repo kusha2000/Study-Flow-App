@@ -1,2 +1,5 @@
 # study_flow
 
+This app is a comprehensive study companion, designed to help you organize courses, track assignments, take notes, and stay on top of deadlines with timely reminders.
+
+<h3>Technologies Used</h3> <ul> 🔹 Flutter<br> 🔹 Firebase <br> </ul> <h3>Features</h3> <ul> ✅ Course Management: Create courses to keep your subjects neatly organized.<br> ✅ Delete Course: Easily remove any course along with its associated assignments and notes.<br> ✅ Assignment Tracker: Add assignments under any course, complete with titles, descriptions, and due dates.<br> ✅ Notes & Resources: Attach notes, links, and files to each course and assignment for quick reference.<br> ✅ Timer & Pomodoro Support: Set custom timers for focused study sessions on each assignment.<br> ✅ Notifications Hub: View all “Due Today” and “Upcoming” assignments in a dedicated section with reminders.<br> ✅ Real-Time Sync: All your data is synced across devices using Firebase Firestore.<br> </ul> <h2>This is the Full Demo of the project</h2><br><br><h2>This is the screenshots of the system</h2><br><br> 
